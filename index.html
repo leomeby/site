@@ -289,14 +289,14 @@
                     <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Хотите оставить заявку?</h6>
                         <p class="">Укажите адрес электронной почты и заполните небольшую форму.</p>
-                        <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                        <div class="newsletter-inner">
                             <input name="EMAIL" placeholder="Your email address" class="common-input"
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'"
-                                required="" type="email">
+                                 type="email" id="form-value-1">
                             <div class="button">
-                                <button class="btn">Продолжить!</button>
+                                <button class="btn send-them">Продолжить!</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <!-- End Newsletter Form -->
                 </div>
@@ -533,7 +533,7 @@
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
                         <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email"><br>
+                            <input name="EMAIL" placeholder="Your email address" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email" id="form-value-2"><br>
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Продолжить!</button>
                             </div>
@@ -646,6 +646,12 @@
     
     <!-- ========================= JS here ========================= -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+    <script>
+    $(".send-them").click(() => {
+    $("#form-value-2").val($("#form-value-1").val());
+    $('#exampleModal').modal('show');
+});
+    </script>
 <script>
 const stepButto = document.querySelectorAll('.step-button');
 const stepButtons = document.querySelectorAll('.step-buttonss');
@@ -686,6 +692,12 @@ Array.from(stepButto).forEach((button,index) => {
     <script src="assets/js/imagesloaded.min.js"></script>
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+    function open(x){
+    $(x).modal('show');
+}
+    </script>
+    
     <script type="text/javascript">
         //========= glightbox
         GLightbox({
