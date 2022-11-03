@@ -4031,10 +4031,16 @@ blockquote span {
   .breadcrumbs .bread-list {
     margin-top: 8px;
   }
-  .hero-area .hero-inner {
-    height: 450px;
-  }
- .hero-area .hero-inner::before {
+
+.hero-area .hero-inner {
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-area .hero-inner::before {
   position: absolute;
   content: "";
   right: 0;
@@ -4055,17 +4061,29 @@ blockquote span {
   z-index: -1;
 }
 
-  .hero-area .hero-text {
-    float: none;
-    margin-top: 140px;
-  }
-  .hero-area .hero-text h1 {
-    font-size: 30px;
-    line-height: 38px;
-  }
-  .hero-area .hero-text .button {
-    margin-top: 25px;
-  }
+.hero-area .hero-text {
+  float: none;
+  margin-top: 220px;
+}
+
+.hero-area .hero-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 55px;
+  margin-bottom: 25px;
+}
+
+.hero-area .hero-text h1 span {
+  font-weight: 300;
+}
+
+.hero-area .hero-text p {
+  font-size: 14px;
+}
+
+.hero-area .hero-text .button {
+  margin-top: 35px;
+}
   .hero-area.index2 .hero-text {
     margin-top: 135px;
   }
@@ -4439,7 +4457,7 @@ blockquote span {
     margin-top: 8px;
   }
 .hero-area .hero-inner {
-  height: 650px;
+  height: 700px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -4457,28 +4475,39 @@ blockquote span {
   background-repeat: no-repeat;
   border-radius: 0;
   height: 100%;
-  top: 280px;
+  top: 0px;
   z-index: 1;
   border-radius: 0;
   border-radius: 100%;
-  height: 440px;
-  width: 440px;
-  right: -54px;
+  height: 800px;
+  width: 800px;
+  right: -135px;
   z-index: -1;
 }
 
+.hero-area .hero-text {
+  float: none;
+  margin-top: 220px;
+}
 
-  .hero-area .hero-text {
-    float: none;
-    margin-top: 100px;
-  }
-  .hero-area .hero-text h1 {
-    font-size: 23px;
-    line-height: 30px;
-  }
-  .hero-area .hero-text .button {
-    margin-top: 20px;
-  }
+.hero-area .hero-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 55px;
+  margin-bottom: 25px;
+}
+
+.hero-area .hero-text h1 span {
+  font-weight: 300;
+}
+
+.hero-area .hero-text p {
+  font-size: 14px;
+}
+
+.hero-area .hero-text .button {
+  margin-top: 35px;
+}
   .hero-area.index2 .hero-text {
     margin-top: 100px;
   }
@@ -5162,7 +5191,7 @@ blockquote span {
   content: "";
   height: 100%;
   width: 100%;
-  background-color: #6610f2;
+  background-color: #4c3e63;
   left: 0;
   top: 0;
   opacity: 0.9;
