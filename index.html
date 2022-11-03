@@ -70,9 +70,6 @@
                                     <li class="nav-item">
                                         <a href="about-us.html">О нас</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="about-us.html">Соискателям</a>
-                                    </li>
                                     <li class="nav-item"><a href="#price">Цены</a></li>
                                     <li class="nav-item"><a href="#contacts">Контакты</a> </li>
                                     <li style="margin-top: 15px">
@@ -95,187 +92,6 @@
         <!-- navbar area -->
     </header>
     <!-- End Header Area -->
-
-
-<!-- Модальное окно -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Оставить заявку</h5>
-        <div class="button">
-            <a class="btn" data-bs-dismiss="modal" aria-label="Закрыть">Закрыть</a>
-        </div>
-      </div>
-      <div class="modal-body">
- <form action="" onsubmit="return sendtelegram()">
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <label class="form-label">Фамилия</label>
-              <input type="text" class="form-control" id="firstName" placeholder="Фамилия" min="2" name="firstNamename" value="" required>
-            </div>
-
-            <div class="col-sm-6">
-              <label class="form-label">Имя</label>
-              <input type="text" class="form-control" id="lastName" name="lastNamename" min="2" placeholder="Имя" value="" required>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Telegram</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="telegram" name="telegramname" min="5" placeholder="telegram" required>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="emailname" placeholder="you@example.com" required>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Компания <span class="text-muted">(Опционально)</span></label>
-              <input type="text" class="form-control" id="comp" name="compname" min="3" placeholder="Моя компания">
-            </div>
-              
-            <div class="col-md-5">
-              <label class="form-label">Страна</label>
-              <select class="form-select" id="country" required>
-                <option value="Беларусь">Беларусь</option>
-                <option value="Россия">Россия</option>
-                <option value="another">другая...</option>
-              </select>
-            </div>
-
-            <div class="col-md-7">
-              <label class="form-label">Телефон</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">+</span>
-                <input type="number" class="form-control" id="phone" name="phonename" placeholder="375001234567" required>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Тариф</label>
-              <select class="form-select select" id="state" required>
-                <option value="Месячный">Месячный</option>
-                <option value="Стандартный">Стандартный</option>
-                <option value="Индивидуальный">Индивидуальный</option>
-              </select>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Напишите свой вопрос</label>
-              <textarea type="text" rows="5" class="form-control" name="zipname" id="zip" required min="20" style="height:164px;"></textarea>
-            </div>
-          </div>
-       <div class="form-check form-switch my-4" style="font-size: 16px">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Согласен(-а) на обработку персональных данных &nbsp;<a href="docs.html" ><sup class="lni lni-box-arrow-up-right text-primary"></sup></a></label>
-                </div>
-          <hr class="my-4">
-
-            <div class="button">
-                <button class="btn w-100 send-them" name="submit" id="submit2" value="Submit" onsubmit="return sendtelegram()">Отправить</button>
-            </div>
-        </form>
-
-        </div>
-    </div>
-  </div>
-</div>
-   <div class="toast-container position-fixed top-0 end-0 p-3">
-<div class="toast text-white bg-dark" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="toast-header bg-warning text-dark">
-    <i class="lni lni-robot rounded me-2"></i>
-    <strong class="me-auto lang-51" data-label="Bot Want 2 IT">Бот Want 2 IT</strong>
-    <small class="text-muted">now</small>
-    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
-  </div>
-  <div class="toast-body lang-52" data-label="Your application is accepted! You will be contacted shortly!">
-    Ваша заявка принята! С Вами свяжутся в ближайшее время!
-  </div> 
-</div>
-</div>
-      <script>
-        const toastTrigger = document.getElementById('submit2')
-        const toastLiveExample = document.getElementById('liveToast')
-        if (toastTrigger) {
-          toastTrigger.addEventListener('click', () => {
-            const toast = new bootstrap.Toast(toastLiveExample)
-    
-            toast.show()
-          })
-        }
-      </script>
-     <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script>
-    const exampleModal = document.getElementById('exampleModal')
-    exampleModal.addEventListener('show.bs.modal', event => {
-  // Кнопка, которая активировала модальное окно
-  const button = event.relatedTarget
-  // Извлекает информацию из атрибутов data-bs-*
-  const recipient = button.getAttribute('data-bs-whatever')
-  // При необходимости вы можете инициировать запрос AJAX здесь,
-  // а затем выполнить обновление в обратном вызове.
-  //
-  // Обновляет содержимое модального окна.
-  const modalBodyInput = exampleModal.querySelector('.modal-body .select')
-
-  modalBodyInput.value = recipient
-})
-    </script>   
-<script type="text/javascript">
-var telegram_bot_id = "5213960366:AAFMCAefnk1sgU-hyZBSIS5II3-IOVC5N20";
-var chat_id = -1001423432956;
-var f_name, l_name, tg_data, mail, com, countr, phon, stat, message;
-var ready = function() {
-    f_name = document.getElementById("firstName").value;
-    l_name = document.getElementById("lastName").value;
-    tg_data = document.getElementById("telegram").value;
-    mail = document.getElementById("email").value;
-    com = document.getElementById("comp").value;
-    countr = document.getElementById("country").value;
-    phon = document.getElementById("phone").value;
-    stat = document.getElementById("state").value;
-    message = document.getElementById("zip").value;
-    message = "Фамилия Имя: " + l_name + ' ' + f_name + " из "+ com + " ("+countr+") Оставил(-а) запрос на сайте по тарифу "+ stat +":\n" + message + "\n\nКонтакты для связи: @" + tg_data + "\nE-mail: " + mail + "\nТелефон: +" + phon;
-};
-var sendtelegram = function() {
-    ready();
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
-        "method": "POST",
-        "headers": {
-            "Content-Type": "application/json",
-            "cache-control": "no-cache"
-        },
-        "data": JSON.stringify({
-            "chat_id": chat_id,
-            "text": message
-        })
-    };
-    $.ajax(settings).done(function(response) {
-        console.log(response);
-    });
-    document.getElementById("firstName").value = "";
-    document.getElementById("lastName").value = "";
-    document.getElementById("telegram").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("comp").value = "";
-    document.getElementById("country").value = "";
-    document.getElementById("phone").value = "";
-    document.getElementById("state").value = "";
-    document.getElementById("zip").value = "";
-    return false;
-    
-};
-
-</script> 
-    
-
 
     <!-- Start Hero Area -->
     <section class="hero-area vh-100">
@@ -490,10 +306,10 @@ var sendtelegram = function() {
                             <div class="single-info">
                                 
                                 <ul class="table-list">
-                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="tel:+375255485756"><i class="lni lni-phone" style="font-size: 18px"></i> +375-25-548-57-56</a></li>
-                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="https://agolubenk.t.me/"><i class="lni lni-telegram" style="font-size: 18px"></i> @agolubenk</a></li>
-                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="mailto:a.golubenko@outlook.com"><i class="lni lni-envelope" style="font-size: 18px"></i> a.golubenko@outlook.com</a></li>
-                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="mailto:a.golubenko@outlook.com"><i class="lni lni-envelope" style="font-size: 18px"></i> a.golubenko@outlook.com</a></li>
+                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="tel:+375293121481"><i class="lni lni-phone" style="font-size: 18px"></i> +375-29-312-14-81</a></li>
+                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="https://ichumak.t.me"><i class="lni lni-telegram" style="font-size: 18px"></i> @ichumak</a></li>
+                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="mailto:irina.chumak@outlook.com"><i class="lni lni-envelope" style="font-size: 18px"></i> irina.chumak@outlook.com</a></li>
+                            <li style="margin: 10px; margin-left: 0px; margin-right:-12px;"><a href="mailto:leomeby@gmail.com"><i class="lni lni-envelope" style="font-size: 18px"></i> leomeby@gmail.com</a></li>
                         </ul>
                         </div>
                     </div>
@@ -592,7 +408,216 @@ var sendtelegram = function() {
         <i class="lni lni-chevron-up"></i>
     </a>
 
+   
+<!-- Модальное окно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Оставить заявку</h5>
+        <div class="button">
+            <a class="btn" data-bs-dismiss="modal" aria-label="Закрыть">Закрыть</a>
+        </div>
+      </div>
+      <div class="modal-body">
+          
+ <!-- <form action="" onsubmit="return sendtelegram()">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label class="form-label">Фамилия</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Фамилия" min="2" name="firstNamename" value="" required>
+            </div>
+
+            <div class="col-sm-6">
+              <label class="form-label">Имя</label>
+              <input type="text" class="form-control" id="lastName" name="lastNamename" min="2" placeholder="Имя" value="" required>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Telegram</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="telegram" name="telegramname" min="5" placeholder="telegram" required>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="emailname" placeholder="you@example.com" required>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Компания <span class="text-muted">(Опционально)</span></label>
+              <input type="text" class="form-control" id="comp" name="compname" min="3" placeholder="Моя компания">
+            </div>
+              
+            <div class="col-md-5">
+              <label class="form-label">Страна</label>
+              <select class="form-select" id="country" required>
+                <option value="Беларусь">Беларусь</option>
+                <option value="Россия">Россия</option>
+                <option value="another">другая...</option>
+              </select>
+            </div>
+
+            <div class="col-md-7">
+              <label class="form-label">Телефон</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">+</span>
+                <input type="number" class="form-control" id="phone" name="phonename" placeholder="375001234567" required>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Тариф</label>
+              <select class="form-select select" id="state" required>
+                <option value="Месячный">Месячный</option>
+                <option value="Стандартный">Стандартный</option>
+                <option value="Индивидуальный">Индивидуальный</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Напишите свой вопрос</label>
+              <textarea type="text" rows="5" class="form-control" name="zipname" id="zip" required min="20" style="height:164px;"></textarea>
+            </div>
+          </div>
+       <div class="form-check form-switch my-4" style="font-size: 16px">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Согласен(-а) на обработку персональных данных &nbsp;<a href="docs.html" ><sup class="lni lni-box-arrow-up-right text-primary"></sup></a></label>
+                </div>
+          <hr class="my-4">
+
+            <div class="button">
+                <button class="btn w-100 send-them" name="submit" id="submit2" value="Submit" onsubmit="return sendtelegram()">Отправить</button>
+            </div>
+        </form> -->
+<div class="container">
+<div class="accordion" id="accordionExample">
+<div class="steps">
+    <progress id="progress" value=0 max=100 ></progress>
+    <div class="step-item">
+        <div class="step-title">
+            <button class="step-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <span class="step-number"><i class="lni lni-envelope"></i></span>
+            </button>        <small class="text-dark d-none d-md-block" style="margin-top:5px"> &nbsp;1. E-mail</small>
+    
+        </div>
+        </div>
+    <div class="step-item">
+        <div class="step-title">
+            <button class="step-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <span class="step-number"><i class="lni lni-user"></i></span>
+            </button>        <small class="text-dark d-none d-md-block" style="margin-top:5px"> &nbsp;2. Контакты</small>
+        </div>
+    </div>
+    <div class="step-item">
+        <div class="step-title">
+            <button class="step-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+          <span class="step-number"><i class="lni lni-popup"></i></span>
+            </button>        <small class="text-dark d-none d-md-block" style="margin-top:5px"> &nbsp;3. Комментарий</small>
+        </div>
+    </div>
+    <div class="step-item">
+        <div class="step-title">
+            <button class="step-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+          <span class="step-number"><i class="lni lni-checkmark"></i></span>
+            </button>        <small class="text-dark d-none d-md-block" style="margin-top:5px"> &nbsp;4. Подтверждение</small>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div  id="headingOne">
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="card-body">
+           your content goes here...
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div  id="headingTwo">
+
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="card-body">
+            your content goes here...
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div  id="headingThree">
+
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+        data-bs-parent="#accordionExample">
+        <div class="card-body">
+            your content goes here...
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div  id="headingFour">
+
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+        data-bs-parent="#accordionExample">
+        <div class="card-body">
+            your content goes here...
+        </div>
+    </div>
+</div>
+</div>
+</div>
+        </div>
+    </div>
+  </div>
+</div>
+   <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script>
+    const exampleModal = document.getElementById('exampleModal')
+    exampleModal.addEventListener('show.bs.modal', event => {
+  // Кнопка, которая активировала модальное окно
+  const button = event.relatedTarget
+  // Извлекает информацию из атрибутов data-bs-*
+  const recipient = button.getAttribute('data-bs-whatever')
+  // При необходимости вы можете инициировать запрос AJAX здесь,
+  // а затем выполнить обновление в обратном вызове.
+  //
+  // Обновляет содержимое модального окна.
+  const modalBodyInput = exampleModal.querySelector('.modal-body .select')
+
+  modalBodyInput.value = recipient
+})
+    </script>   
+   
+ 
+    
+    
     <!-- ========================= JS here ========================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+<script>
+const stepButtons = document.querySelectorAll('.step-button');
+const progress = document.querySelector('#progress');
+
+Array.from(stepButtons).forEach((button,index) => {
+    button.addEventListener('click', () => {
+        progress.setAttribute('value', index * 100 /(stepButtons.length - 1) );//there are 3 buttons. 2 spaces.
+
+        stepButtons.forEach((item, secindex)=>{
+            if(index > secindex){
+                item.classList.add('done');
+            }
+            if(index < secindex){
+                item.classList.remove('done');
+            }
+        })
+    })
+})
+</script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/count-up.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
