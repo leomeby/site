@@ -3577,6 +3577,16 @@ blockquote span {
   background-color: #fff;
   color: #081828;
   border-radius: 30px;
+  padding: 0px 30px;
+  display: inline-block;
+}
+.newsletter-area .subscribe-text .range input {
+  height: 48px;
+  width: 400px;
+  border: none;
+  background-color: #fff;
+  color: #081828;
+  border-radius: 30px;
   padding: 0px 0px;
   display: inline-block;
 }
@@ -5274,7 +5284,7 @@ input[type="range"] {
 	border-style: solid;
 	border-radius: 50rem;
 	border-color: rgba(0, 0, 0, 0.1);
-	padding: 20px 5px;
+	padding: 0px 0px;
 }
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
@@ -5285,7 +5295,7 @@ input[type="range"]::-webkit-slider-thumb {
     animation: pulse 2s infinite;
 
 }
-@-webkit-keyframes pulse {
+@-webkit-keyframes .pulse {
   0% {
     -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
   }
