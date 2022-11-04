@@ -5254,13 +5254,13 @@ blockquote span {
     position: absolute;
     width: 95%;
     z-index: 5;
-    height: 3px;
+    height: 1px;
     margin-left: 18px;
     margin-bottom: 18px;
 }
 /* to customize progress bar */
 #progress::-webkit-progress-value {
-    background-color: var(--bs-info);
+    background-color: transparent!important;
     transition: .5s ease;
 }
 #progress::-webkit-progress-bar {

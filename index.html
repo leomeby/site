@@ -290,11 +290,9 @@
                         <h6>Хотите оставить заявку?</h6>
                         <p class="">Укажите адрес электронной почты и заполните небольшую форму.</p>
                         <div class="newsletter-inner">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'"
-                                 type="email" id="form-value-1">
+                            <input name="EMAIL" placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" type="email">
                             <div class="button">
-                                <button class="btn send-them">Продолжить!</button>
+                                <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Продолжить!</button>
                             </div>
                         </div>
                     </div>
@@ -495,7 +493,7 @@
 <div class="container">
 <div class="accordion" id="accordionExample">
 <div class="steps">
-    <progress id="progress" value=0 max=100 ></progress>
+    <progress id="progress" value=0 max=100 class="d-none d-sm-block"></progress>
     <div class="step-item">
         <div class="step-title">
             <button class="step-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -532,8 +530,8 @@
         <section class="newsletter-area">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
-                        <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email" id="form-value-2"><br>
+                        <form class="newsletter-inner text-right" style="margin-left: -10px">
+                            <input name="EMAIL" placeholder="Your email address" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email" id="recipient-name"><br>
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Продолжить!</button>
                             </div>
@@ -623,7 +621,10 @@
     </div>
   </div>
 </div>
+
    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+
     <script>
     const exampleModal = document.getElementById('exampleModal')
     exampleModal.addEventListener('show.bs.modal', event => {
@@ -645,13 +646,7 @@
     
     
     <!-- ========================= JS here ========================= -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
-    <script>
-    $(".send-them").click(() => {
-    $("#form-value-2").val($("#form-value-1").val());
-    $('#exampleModal').modal('show');
-});
-    </script>
+
 <script>
 const stepButto = document.querySelectorAll('.step-button');
 const stepButtons = document.querySelectorAll('.step-buttonss');
