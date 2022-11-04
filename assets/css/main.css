@@ -5288,35 +5288,10 @@ input[type="range"] {
 }
 input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
-	background: #89B84C;
+	background: #20c997;
+	color: #20c997;
 	border-radius: 50rem;
 	height: 3em;
 	width: 3em;
-    animation: pulse 2s infinite;
 
-}
-@-webkit-keyframes .pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-  }
-  70% {
-      -webkit-box-shadow: 0 0 0 3px rgba(204,169,44, 0);
-  }
-  100% {
-      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
-}
-@keyframes pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-  }
-  70% {
-      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-      box-shadow: 0 0 0 3px rgba(204,169,44, 0);
-  }
-  100% {
-      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-  }
 }

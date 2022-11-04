@@ -526,12 +526,14 @@
                             <i class="lni lni-checkmark-circle text-success text-center" style="font-size: 64px"></i><hr>
                             </div>
                             <div class="form-check form-switch range d-flex justify-content-center" style="font-size: 16px; margin-left: -34px">
-                    <input class="pulse" type="range"  value="0" role="switch" id="flexSwitchCheckDefault">
+                    <i class="lni lni-chevron-right" style="font-size: 32px; padding-top: 8px"></i> <input class="pulse" type="range"  value="0" role="switch" id="locker" oninput="lock()">
                             </div>
                                 <div class="d-flex justify-content-between" style="margin-top: 16px">
                             <a download href="#" class="d-sm-none"> Согласие <i class="lni lni-download" style="font-size: 16px"></i></a> <a download href="#" class="d-none d-sm-block">Согласие на обработку данных <i class="lni lni-download" style="font-size: 16px"></i></a> <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Данные</a>
                         </div>
-                            <div class="collapse text-info" id="collapseExample">
+                            <div class="collapse text-info row" id="collapseExample">
+                                <div class="col-sm-12 col-md-2 col-lg-4"></div>
+                                <div class="col-sm-12 col-md-10 col-lg-8">
                                 <hr>
                             <div class="d-flex justify-content-end">
                              <ul class="table-list">
@@ -545,14 +547,15 @@
                             <li style="margin: 10px;"><span class="messageend"></span></li>
                         </ul>                                
                             </div>
+                                </div>
                             </div>
                             <br>
                             <div class="d-flex justify-content-between">
                             <div class="button step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <button class="btn">Назад</button>
                             </div>
-                            <div class="button step-buttonss">
-                                <button class="btn">Отправить!</button>
+                            <div class="button">
+                                <button class="btn lock d-none" id=lock>Отправить!</button>
                             </div>
                             </div>
                         </div>
@@ -601,6 +604,18 @@ exampleModal.addEventListener('show.bs.modal', event => {
     
     <!-- ========================= JS here ========================= -->
 
+    <script>
+    function lock(){
+        var result = locker.value;
+        if (result == 100){
+            document.getElementById('lock').classList.remove("d-none");
+        } else {
+            document.getElementById('lock').classList.add("d-none");
+
+        }
+    }
+    </script>
+    
 <script>
 const stepButto = document.querySelectorAll('.step-button');
 const stepButtons = document.querySelectorAll('.step-buttonss');
