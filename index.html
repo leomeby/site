@@ -289,12 +289,13 @@
                     <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Хотите оставить заявку?</h6>
                         <p class="">Укажите адрес электронной почты и заполните небольшую форму.</p>
-                        <div class="newsletter-inner">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input" id="value-1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" type="email">
+                        <form class="newsletter-inner">
+                            <input placeholder="mail@example.com" class="common-input" id="value-1" type="email">
+                            <input class="common-input d-none" required>
                             <div class="button">
                                 <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Продолжить!</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <!-- End Newsletter Form -->
                 </div>
@@ -456,7 +457,7 @@
 
 <div class="card" style="border: 0">
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <section class="newsletter-area section" style="background-color: transparent">
+        <section class="newsletter-area" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
@@ -471,7 +472,7 @@
 </div>
 <div class="card" style="border: 0">
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <section class="newsletter-area section" style="background-color: transparent">
+        <section class="newsletter-area" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите контактные данные</h6>
                         <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
@@ -527,11 +528,11 @@
                             <div class="form-check form-switch d-flex justify-content-center" style="font-size: 16px">
                     <input class="form-check-input  w-100" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                             </div>
-                                <ul class="d-flex justify-content-between" style="margin-top: 16px">
-                            <a download href="#"> Согласие на обработку ПД</a>&nbsp;<a download href="#"> Документ 1</a>
-                        </ul>
+                                <div class="d-flex justify-content-start" style="margin-top: 16px">
+                            <a download href="#"> Согласие на обработку данных</a>
+                        </div>
                             <br>
-                            <div class="d-flex justify-content-between"><br>
+                            <div class="d-flex justify-content-between">
                             <div class="button step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <button class="btn">Назад</button>
                             </div>
@@ -568,7 +569,6 @@ exampleModal.addEventListener('show.bs.modal', event => {
   const modalTitle = exampleModal.querySelector('.modal-title')
   const modalBodyInput = exampleModal.querySelector('.modal-body input')
 
-  modalTitle.textContent = `New message to ${recipient}`
   modalBodyInput.value = recipient
 })
     </script>   
