@@ -348,7 +348,6 @@
                         <div class="single-footer f-link">
                             <h3 class="" style="color: #6610f2">Разделы</h3>
                             <ul>
-                                <li><a href="#">Главная</a></li>
                                 <li><a href="#">О нас</a></li>
                                 <li><a href="#">Цены</a></li>
                                 <li><a href="#">Контакты</a></li>
@@ -363,8 +362,7 @@
                             <ul>
                                 <li><a href="#">Обработка ПД</a></li>
                                 <li><a href="#">Договор</a></li>
-                                <li><a href="#">Акт</a></li>
-                                <li><a href="#">NDA</a></li>
+                                <li><a href="#">Заявка</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -376,7 +374,6 @@
                             <ul>
                                 <li><a href="#">Обратная связь</a></li>
                                 <li><a href="#">Скачать прейскурант</a></li>
-                                <li><a href="#">FAQ</a></li>
                                 <li><a href="#">Интересует IT</a></li>
                             </ul>
                         </div>
@@ -555,7 +552,7 @@
                                 <button class="btn">Назад</button>
                             </div>
                             <div class="button">
-                                <button class="btn lock d-none" id=lock>Отправить!</button>
+                                <button class="btn lock d-none" id="lock">Отправить!</button>
                             </div>
                             </div>
                         </div>
@@ -569,7 +566,27 @@
     </div>
   </div>
 </div>
-
+    
+    
+<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1000">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <i class="rounded me-2"></i>
+      <strong class="me-auto">Ваша сообщение принято!</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+    </div>
+    <div class="toast-body">
+        <p>Предлагаем скачать и оформить заявку:</p>
+       <div class="mt-2 pt-2 border-top">
+      <a download href="#" type="button" class="btn btn-primary btn-sm">Скачать</a>
+      <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Закрыть</button>
+    </div>
+    </div>
+  </div>
+</div>
+    
+    
+    
    <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
 
@@ -613,7 +630,16 @@ exampleModal.addEventListener('show.bs.modal', event => {
             document.getElementById('lock').classList.add("d-none");
 
         }
-    }
+    };
+const toastTrigger = document.getElementById('lock')
+const toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+  toastTrigger.addEventListener('click', () => {
+    const toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+  })
+}
     </script>
     
 <script>
