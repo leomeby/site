@@ -219,7 +219,7 @@
                             <a class="btn" href="#">Цены</a>
                         </div>
                         <div class="button" style="margin-top: 10px">
-                            <a class="btn" href="#">Связаться</a>
+                            <a class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Офисный персонал">Связаться</a>
                         </div>
                         <!-- End Table Bottom -->
                     </div>
@@ -249,7 +249,7 @@
                             <a class="btn" href="#">Цены</a>
                         </div>
                         <div class="button" style="margin-top: 10px">
-                            <a class="btn" href="#">Связаться</a>
+                            <a class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Домашний персонал">Связаться</a>
                         </div>
                         <!-- End Table Bottom -->
                     </div>
@@ -316,7 +316,6 @@
             </div>
         </div>
     </section>
-
     <!-- /End Newsletter Area -->
 
     <footer class="footer">
@@ -461,7 +460,7 @@
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email" id="recipient-name"><br>
+                            <input name="EMAIL" placeholder="Your email address" class="common-input w-100 mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email" id="recipient-name"><br>
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Продолжить!</button>
                             </div>
@@ -500,7 +499,7 @@
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="name" placeholder="Тема вопроса" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Фамилия Имя'" required="" type="text"><hr>
+                            <input name="name" placeholder="Тема вопроса" class="common-input w-100 theme-name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Фамилия Имя'" required="" type="text"><hr>
                             
                             <textarea name="name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" onfocus="this.placeholder = ''" rows="7" onblur="this.placeholder = 'Город'" required="" type="text"></textarea><hr>
                             <div class="d-flex justify-content-between">
@@ -534,7 +533,10 @@
                             <div class="collapse text-info" id="collapseExample">
                                 <hr>
                             <div class="d-flex justify-content-end">
-                                <span class="emailend"></span>
+                             <ul class="table-list">
+                            <li style="margin: 10px;"><span class="emailend"></span></li>
+                            <li style="margin: 10px;"><span class="themeend"></span></li>
+                        </ul>                                
                             </div>
                             </div>
                             <br>
@@ -568,16 +570,22 @@ exampleModal.addEventListener('show.bs.modal', event => {
   const button = event.relatedTarget
   // Извлекает информацию из атрибутов data-bs-*
   const recipient = document.getElementById('value-1').value
+  const theme = button.getAttribute('data-bs-whatever')
+
   // При необходимости вы можете инициировать запрос AJAX здесь,
   // а затем выполнить обновление в обратном вызове.
   //
   // Обновляет содержимое модального окна.
   const emailinend = document.querySelector('.emailend')
-  const modalBodyInput = exampleModal.querySelector('.modal-body input')
+  const themeinend = document.querySelector('.themeend')
+  const modalBodyInputMail = exampleModal.querySelector('.modal-body input .mail')
+  const modalBodyInputTheme = exampleModal.querySelector('.modal-body input .theme-name')
 
   emailinend.textContent = `Email: ${recipient}`
+  themeinend.textContent = `Тема: ${theme}`
 
-  modalBodyInput.value = recipient
+  modalBodyInputMail.value = recipient
+  modalBodyInputTheme.value = theme
 })
     </script>   
    
