@@ -591,35 +591,7 @@ exampleModal.addEventListener('show.bs.modal', event => {
   themeinend.textContent = `Тема: ${theme}`
 
   modalBodyInputMail.value = recipient
-  modalBodyInputTheme.value = theme
-    
-    
-  const recipientmail = document.getElementById('mailform').value
-  const recipientname = document.getElementById('nameform').value
-  const recipientcompany = document.getElementById('companyform').value
-  const recipientsity = document.getElementById('sityform').value
-  const recipientphone = document.getElementById('phoneform').value
-  const recipienttelegram = document.getElementById('telegramform').value
-  const recipienttheme = document.getElementById('themeform').value
-  const recipientmassege = document.getElementById('massegeform').value
-  
-  const nameinend = document.querySelector('.nameend')
-  const companyinend = document.querySelector('.companyend')
-  const sityinend = document.querySelector('.sityend')
-  const emailinend = document.querySelector('.emailend')
-  const phoneinend = document.querySelector('.phoneend')
-  const telegraminend = document.querySelector('.telegramend')
-  const themeinend = document.querySelector('.themeend')
-  const messageinend = document.querySelector('.messageend')
-  
-  nameinend.textContent = `Фамилия Имя: ${recipientname}`
-  companyinend.textContent = `Компания: ${recipientcompany}`
-  sityinend.textContent = `Город: ${recipientsity}`
-  emailinend.textContent = `Email: ${recipientmail}`
-  phoneinend.textContent = `Телефон: ${recipientphone}`
-  telegraminend.textContent = `Telegram: @${recipienttelegram}`
-  themeinend.textContent = `Тема: ${recipienttheme}`
-  messageinend.textContent = `Сообщение: ${recipientmassege}`     
+  modalBodyInputTheme.value = theme 
 })
     </script>   
    
