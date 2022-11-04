@@ -102,7 +102,7 @@
                     <div class="col-lg-8 col-md-12">
                         <div class="home-slider">
                             <div class="hero-text">
-                                <i><h1 class="wow fadeInUp" data-wow-delay=".3" style="color: #fff; font-size: 24px">Кадровое агентство <big>Леоми</big>!</h1></i>
+                                <i><h1 class="wow fadeInUp" data-wow-delay=".3" style="color: #fff; font-size: 24px">Кадровое агентство <big>ЛеоМи</big>!</h1></i>
                                 <p class="wow fadeInUp" data-wow-delay=".5s" style="color: #fff">Человеческое решение Ваших вопросов!</p>
                                 <div class="button wow fadeInUp" data-wow-delay=".7s">
                                     <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn">Оставить заявку</a><br><br>
@@ -527,22 +527,22 @@
 
 <div class="card" style="border: 0">
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <section class="newsletter-area">
+        <section class="newsletter-area section" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
-                        <form class="newsletter-inner text-right" style="margin-left: -10px">
+                        <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <input name="EMAIL" placeholder="Your email address" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email" id="recipient-name"><br>
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Продолжить!</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
             </section>
     </div>
 </div>
 <div class="card" style="border: 0">
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <section class="newsletter-area">
+        <section class="newsletter-area section" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите контактные данные</h6>
                         <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
@@ -566,7 +566,7 @@
 </div>
 <div class="card" style="border: 0">
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"data-bs-parent="#accordionExample">
-        <section class="newsletter-area">
+        <section class="newsletter-area section" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
                         <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
@@ -588,7 +588,7 @@
 </div>
 <div class="card" style="border: 0">
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-        <section class="newsletter-area">
+        <section class="newsletter-area section" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6 class="text-center">Почти все!</h6>
                         <form action="" method="" class="newsletter-inner" style="margin-left: -10px">
@@ -607,7 +607,7 @@
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Назад</button>
                             </div>
                             <div class="button"><br>
-                                <button class="btn" type="submit">Отправить!</button>
+                                <button class="btn">Отправить!</button>
                             </div>
                             </div>
                         </form>
@@ -626,8 +626,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
 
     <script>
-    const exampleModal = document.getElementById('exampleModal')
-    exampleModal.addEventListener('show.bs.modal', event => {
+const exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', event => {
   // Кнопка, которая активировала модальное окно
   const button = event.relatedTarget
   // Извлекает информацию из атрибутов data-bs-*
@@ -636,8 +636,10 @@
   // а затем выполнить обновление в обратном вызове.
   //
   // Обновляет содержимое модального окна.
-  const modalBodyInput = exampleModal.querySelector('.modal-body .select')
+  const modalTitle = exampleModal.querySelector('.modal-title')
+  const modalBodyInput = exampleModal.querySelector('.modal-body input')
 
+  modalTitle.textContent = `New message to ${recipient}`
   modalBodyInput.value = recipient
 })
     </script>   
