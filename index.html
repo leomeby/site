@@ -290,9 +290,9 @@
                         <h6>Хотите оставить заявку?</h6>
                         <p class="">Укажите адрес электронной почты и заполните небольшую форму.</p>
                         <div class="newsletter-inner">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" type="email">
+                            <input name="EMAIL" placeholder="Your email address" class="common-input" id="value-1" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" type="email">
                             <div class="button">
-                                <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Продолжить!</button>
+                                <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Продолжить!</button>
                             </div>
                         </div>
                     </div>
@@ -409,7 +409,7 @@
    
 <!-- Модальное окно -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-lg modal-fullscreen-md-down modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Оставить заявку</h5>
@@ -418,78 +418,7 @@
         </div>
       </div>
       <div class="modal-body">
-          
- <!-- <form action="" onsubmit="return sendtelegram()">
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <label class="form-label">Фамилия</label>
-              <input type="text" class="form-control" id="firstName" placeholder="Фамилия" min="2" name="firstNamename" value="" required>
-            </div>
 
-            <div class="col-sm-6">
-              <label class="form-label">Имя</label>
-              <input type="text" class="form-control" id="lastName" name="lastNamename" min="2" placeholder="Имя" value="" required>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Telegram</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="telegram" name="telegramname" min="5" placeholder="telegram" required>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="emailname" placeholder="you@example.com" required>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Компания <span class="text-muted">(Опционально)</span></label>
-              <input type="text" class="form-control" id="comp" name="compname" min="3" placeholder="Моя компания">
-            </div>
-              
-            <div class="col-md-5">
-              <label class="form-label">Страна</label>
-              <select class="form-select" id="country" required>
-                <option value="Беларусь">Беларусь</option>
-                <option value="Россия">Россия</option>
-                <option value="another">другая...</option>
-              </select>
-            </div>
-
-            <div class="col-md-7">
-              <label class="form-label">Телефон</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">+</span>
-                <input type="number" class="form-control" id="phone" name="phonename" placeholder="375001234567" required>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Тариф</label>
-              <select class="form-select select" id="state" required>
-                <option value="Месячный">Месячный</option>
-                <option value="Стандартный">Стандартный</option>
-                <option value="Индивидуальный">Индивидуальный</option>
-              </select>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Напишите свой вопрос</label>
-              <textarea type="text" rows="5" class="form-control" name="zipname" id="zip" required min="20" style="height:164px;"></textarea>
-            </div>
-          </div>
-       <div class="form-check form-switch my-4" style="font-size: 16px">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Согласен(-а) на обработку персональных данных &nbsp;<a href="docs.html" ><sup class="lni lni-box-arrow-up-right text-primary"></sup></a></label>
-                </div>
-          <hr class="my-4">
-
-            <div class="button">
-                <button class="btn w-100 send-them" name="submit" id="submit2" value="Submit" onsubmit="return sendtelegram()">Отправить</button>
-            </div>
-        </form> -->
 <div class="container">
 <div class="accordion" id="accordionExample">
 <div class="steps">
@@ -566,10 +495,10 @@
 </div>
 <div class="card" style="border: 0">
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"data-bs-parent="#accordionExample">
-        <section class="newsletter-area section" style="background-color: transparent">
+        <section class="newsletter-area" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
-                        <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
+                        <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <input name="name" placeholder="Тема вопроса" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Фамилия Имя'" required="" type="text"><hr>
                             
                             <textarea name="name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" onfocus="this.placeholder = ''" rows="7" onblur="this.placeholder = 'Город'" required="" type="text"></textarea><hr>
@@ -581,17 +510,17 @@
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Продолжить!</button>
                             </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
             </section>
     </div>
 </div>
 <div class="card" style="border: 0">
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-        <section class="newsletter-area section" style="background-color: transparent">
+        <section class="newsletter-area" style="background-color: transparent">
            <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
                         <h6 class="text-center">Почти все!</h6>
-                        <form action="" method="" class="newsletter-inner" style="margin-left: -10px">
+                        <div class="newsletter-inner" style="margin-left: -10px">
                             <div class="text-center">
                             <i class="lni lni-checkmark-circle text-success text-center" style="font-size: 64px"></i><hr>
                             </div>
@@ -602,15 +531,15 @@
                             <a download href="#"> Согласие на обработку ПД</a>&nbsp;<a download href="#"> Документ 1</a>
                         </ul>
                             <br>
-                            <div class="d-flex justify-content-between">
-                            <div class="button"><br>
-                                <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Назад</button>
+                            <div class="d-flex justify-content-between"><br>
+                            <div class="button step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn">Назад</button>
                             </div>
                             <div class="button"><br>
                                 <button class="btn">Отправить!</button>
                             </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
             </section>
     </div>
@@ -631,7 +560,7 @@ exampleModal.addEventListener('show.bs.modal', event => {
   // Кнопка, которая активировала модальное окно
   const button = event.relatedTarget
   // Извлекает информацию из атрибутов data-bs-*
-  const recipient = button.getAttribute('data-bs-whatever')
+  const recipient = document.getElementById('value-1').value
   // При необходимости вы можете инициировать запрос AJAX здесь,
   // а затем выполнить обновление в обратном вызове.
   //
@@ -667,10 +596,10 @@ Array.from(stepButtons).forEach((button,index) => {
             }
         })
     })
-})
+});
 Array.from(stepButto).forEach((button,index) => {
     button.addEventListener('click', () => {
-        stepButto.forEach((item, secindex)=>{
+        stepButtons.forEach((item, secindex)=>{
             if(index > secindex){
                 item.classList.add('done');
             }
