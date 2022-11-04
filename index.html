@@ -460,7 +460,7 @@
            <div class="subscribe-text fadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="EMAIL" placeholder="Your email address" class="common-input w-100 mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'" required="" type="email" id="recipient-name"><br>
+                            <input name="mail" placeholder="mail@example.com" class="common-input w-100 mail" required="" type="email"><br>
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Продолжить!</button>
                             </div>
@@ -474,12 +474,12 @@
         <section class="newsletter-area" style="background-color: transparent">
            <div class="subscribe-text fadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите контактные данные</h6>
-                        <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="name" placeholder="Фамилия Имя" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Фамилия Имя'" required="" type="text"><hr>
-                            <input name="name" placeholder="Компания" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Компания'" required="" type="text"><hr>
-                            <input name="name" placeholder="Телефон" class="common-input w-100" value="" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Телефон'" required="" type="tel"><hr>
-                            <input name="name" placeholder="Telegram" class="common-input w-100" value="" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Telegram'" required="" type="text"><hr>
-                            <input name="name" placeholder="Город" class="common-input w-100" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Город'" required="" type="text"><hr>
+                        <form class="newsletter-inner text-right" style="margin-left: -10px">
+                            <input name="name" placeholder="Фамилия Имя" class="common-input w-100" required="" type="text" id="nameform"><hr>
+                            <input name="company" placeholder="Компания" class="common-input w-100" required="" type="text" id="companyform"><hr>
+                            <input name="phone" placeholder="Телефон" class="common-input w-100" required="" type="tel" id="phoneform"><hr>
+                            <input name="telegram" placeholder="Telegram" class="common-input w-100" required="" type="text" id="telegramform"><hr>
+                            <input name="sity" placeholder="Город" class="common-input w-100" required="" type="text" id="sityform"><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Назад</button>
@@ -499,9 +499,9 @@
            <div class="subscribe-text fadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="name" placeholder="Тема вопроса" class="common-input w-100 theme-name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Фамилия Имя'" required="" type="text"><hr>
+                            <input name="theme" placeholder="Тема вопроса" class="common-input w-100 theme-name" required="" type="text" id="themeform"><hr>
                             
-                            <textarea name="name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" onfocus="this.placeholder = ''" rows="7" onblur="this.placeholder = 'Город'" required="" type="text"></textarea><hr>
+                            <textarea name="message" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" id="messageform"></textarea><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Назад</button>
@@ -534,8 +534,14 @@
                                 <hr>
                             <div class="d-flex justify-content-end">
                              <ul class="table-list">
+                            <li style="margin: 10px;"><span class="nameend"></span></li>
+                            <li style="margin: 10px;"><span class="companyend"></span></li>
+                            <li style="margin: 10px;"><span class="sityend"></span></li>
                             <li style="margin: 10px;"><span class="emailend"></span></li>
+                            <li style="margin: 10px;"><span class="phoneend"></span></li>
+                            <li style="margin: 10px;"><span class="telegramend"></span></li>
                             <li style="margin: 10px;"><span class="themeend"></span></li>
+                            <li style="margin: 10px;"><span class="messageend"></span></li>
                         </ul>                                
                             </div>
                             </div>
@@ -586,11 +592,38 @@ exampleModal.addEventListener('show.bs.modal', event => {
 
   modalBodyInputMail.value = recipient
   modalBodyInputTheme.value = theme
+    
+    
+  const recipientmail = document.getElementById('mailform').value
+  const recipientname = document.getElementById('nameform').value
+  const recipientcompany = document.getElementById('companyform').value
+  const recipientsity = document.getElementById('sityform').value
+  const recipientphone = document.getElementById('phoneform').value
+  const recipienttelegram = document.getElementById('telegramform').value
+  const recipienttheme = document.getElementById('themeform').value
+  const recipientmassege = document.getElementById('massegeform').value
+  
+  const nameinend = document.querySelector('.nameend')
+  const companyinend = document.querySelector('.companyend')
+  const sityinend = document.querySelector('.sityend')
+  const emailinend = document.querySelector('.emailend')
+  const phoneinend = document.querySelector('.phoneend')
+  const telegraminend = document.querySelector('.telegramend')
+  const themeinend = document.querySelector('.themeend')
+  const messageinend = document.querySelector('.messageend')
+  
+  nameinend.textContent = `Фамилия Имя: ${recipientname}`
+  companyinend.textContent = `Компания: ${recipientcompany}`
+  sityinend.textContent = `Город: ${recipientsity}`
+  emailinend.textContent = `Email: ${recipientmail}`
+  phoneinend.textContent = `Телефон: ${recipientphone}`
+  telegraminend.textContent = `Telegram: @${recipienttelegram}`
+  themeinend.textContent = `Тема: ${recipienttheme}`
+  messageinend.textContent = `Сообщение: ${recipientmassege}`     
 })
     </script>   
    
  
-    
     
     <!-- ========================= JS here ========================= -->
 
