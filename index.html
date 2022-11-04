@@ -461,7 +461,7 @@
            <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="EMAIL" placeholder="mail@example.com" class="common-input w-100 mail" required="" type="email" id="recipient-name"><br>
+                            <input name="EMAIL" placeholder="mail@example.com" class="common-input w-100 mail" required="" type="email" id="recipient-name" onchange="document.querySelector('.emailend').textContent = `Email: ${this.value}`"><br>
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Продолжить!</button>
                             </div>
@@ -475,12 +475,12 @@
         <section class="newsletter-area" style="background-color: transparent">
            <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите контактные данные</h6>
-                        <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input id="name-name" placeholder="Фамилия Имя" class="common-input w-100" required="" type="text"><hr>
-                            <input id="company-name" placeholder="Компания" class="common-input w-100" required="" type="text"><hr>
-                            <input id="phone-name" placeholder="Телефон" class="common-input w-100" required="" type="tel"><hr>
-                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required="" type="text"><hr>
-                            <input id="theme-name" placeholder="Город" class="common-input w-100" required="" type="text"><hr>
+                        <div class="newsletter-inner text-right" style="margin-left: -10px">
+                            <input id="name-name" placeholder="Фамилия Имя" class="common-input w-100" required="" type="text" onchange="document.querySelector('.nameend').textContent = `Фамилия Имя: ${this.value}`"><hr>
+                            <input id="company-name" placeholder="Компания" class="common-input w-100" required="" type="text" onchange="document.querySelector('.companyend').textContent = `Компания: ${this.value}`"><hr>
+                            <input id="phone-name" placeholder="Телефон" class="common-input w-100" required="" type="tel" onchange="document.querySelector('.phoneend').textContent = `Телефон: ${this.value}`"><hr>
+                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required="" type="text" onchange="document.querySelector('.telegramend').textContent = `Telegram: ${this.value}`"><hr>
+                            <input id="theme-name" placeholder="Город" class="common-input w-100" required="" type="text" onchange="document.querySelector('.sityend').textContent = `Город: ${this.value}`"><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Назад</button>
@@ -489,7 +489,7 @@
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Продолжить!</button>
                             </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
             </section>
     </div>
@@ -500,9 +500,9 @@
            <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input id="theme-name" placeholder="Тема вопроса" class="common-input w-100" id="theme-name" required="" type="text"><hr>
+                            <input  placeholder="Тема вопроса" class="common-input w-100 theme-name" id="theme-name" required="" type="text" onchange="document.querySelector('.themeend').textContent = `Тема: ${this.value}`"><hr>
                             
-                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text"></textarea><hr>
+                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `Сообщение: ${this.value}`"></textarea><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Назад</button>
@@ -535,8 +535,14 @@
                                 <hr>
                             <div class="d-flex justify-content-end">
                              <ul class="table-list">
+                            <li style="margin: 10px;"><span class="nameend"></span></li>
+                            <li style="margin: 10px;"><span class="companyend"></span></li>
+                            <li style="margin: 10px;"><span class="sityend"></span></li>
+                            <li style="margin: 10px;"><span class="phoneend"></span></li>
+                            <li style="margin: 10px;"><span class="telegramend"></span></li>
                             <li style="margin: 10px;"><span class="emailend"></span></li>
                             <li style="margin: 10px;"><span class="themeend"></span></li>
+                            <li style="margin: 10px;"><span class="messageend"></span></li>
                         </ul>                                
                             </div>
                             </div>
@@ -580,7 +586,7 @@ exampleModal.addEventListener('show.bs.modal', event => {
   const emailinend = document.querySelector('.emailend')
   const themeinend = document.querySelector('.themeend')
   const modalBodyInputMail = exampleModal.querySelector('#recipient-name')
-  const modalBodyInputTheme = exampleModal.querySelector('#theme-name')
+  const modalBodyInputTheme = exampleModal.querySelector('.theme-name')
 
   emailinend.textContent = `Email: ${recipient}`
   themeinend.textContent = `Тема: ${theme}`
