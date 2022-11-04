@@ -316,8 +316,39 @@
             </div>
         </div>
     </section>
-    <!-- /End Newsletter Area -->
 
+    <!-- /End Newsletter Area -->
+        <section class="newsletter-area section">
+           <div class="subscribe-text wow fadeInLeft" data-wow-delay=".2s" style="border-radius: 2em 2em 2em 2em">
+                        <h6 class="text-center">Почти все!</h6>
+                        <div class="newsletter-inner" style="margin-left: -10px">
+                            <div class="text-center">
+                            <i class="lni lni-checkmark-circle text-success text-center" style="font-size: 64px"></i><hr>
+                            </div>
+                            <div class="form-check form-switch d-flex justify-content-center" style="font-size: 16px; margin-left: -34px">
+                    <input class="pulse" type="range" value="0" role="switch" id="flexSwitchCheckDefault">
+                            </div>
+                                <div class="d-flex justify-content-between" style="margin-top: 16px">
+                            <a download href="#" class="d-sm-none"> Согласие на обработку <i class="lni lni-download" style="font-size: 16px"></i></a> <a download href="#" class="d-none d-sm-block">Согласие на обработку данных <i class="lni lni-download" style="font-size: 16px"></i></a> <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Ваши данные</a>
+                        </div>
+                            <div class="collapse text-info" id="collapseExample">
+                                <hr>
+                            <div class="d-flex justify-content-end">
+                                <span class="emailend"></span>
+                            </div>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-between">
+                            <div class="button step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="btn">Назад</button>
+                            </div>
+                            <div class="button step-buttonss">
+                                <button class="btn">Отправить!</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
 
     <footer class="footer">
         <!-- Start Middle Top -->
@@ -525,12 +556,18 @@
                             <div class="text-center">
                             <i class="lni lni-checkmark-circle text-success text-center" style="font-size: 64px"></i><hr>
                             </div>
-                            <div class="form-check form-switch d-flex justify-content-center" style="font-size: 16px">
-                    <input class="form-check-input  w-100" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            <div class="form-check form-switch d-flex justify-content-center" style="font-size: 16px; margin-left: -34px">
+                    <input class="pulse" type="range" value="0" role="switch" id="flexSwitchCheckDefault">
                             </div>
-                                <div class="d-flex justify-content-start" style="margin-top: 16px">
-                            <a download href="#"> Согласие на обработку данных</a>
+                                <div class="d-flex justify-content-between" style="margin-top: 16px">
+                            <a download href="#" class="d-sm-none"> Согласие на обработку <i class="lni lni-download" style="font-size: 16px"></i></a> <a download href="#" class="d-none d-sm-block">Согласие на обработку данных <i class="lni lni-download" style="font-size: 16px"></i></a> <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Ваши данные</a>
                         </div>
+                            <div class="collapse text-info" id="collapseExample">
+                                <hr>
+                            <div class="d-flex justify-content-end">
+                                <span class="emailend"></span>
+                            </div>
+                            </div>
                             <br>
                             <div class="d-flex justify-content-between">
                             <div class="button step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -566,8 +603,10 @@ exampleModal.addEventListener('show.bs.modal', event => {
   // а затем выполнить обновление в обратном вызове.
   //
   // Обновляет содержимое модального окна.
-  const modalTitle = exampleModal.querySelector('.modal-title')
+  const emailinend = document.querySelector('.emailend')
   const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+  emailinend.textContent = `Email: ${recipient}`
 
   modalBodyInput.value = recipient
 })
@@ -598,6 +637,18 @@ Array.from(stepButtons).forEach((button,index) => {
     })
 });
 Array.from(stepButto).forEach((button,index) => {
+    button.addEventListener('click', () => {
+        stepButtons.forEach((item, secindex)=>{
+            if(index > secindex){
+                item.classList.add('done');
+            }
+            if(index < secindex){
+                item.classList.remove('done');
+            }
+        })
+    })
+});
+Array.from(stepButtons).forEach((button,index) => {
     button.addEventListener('click', () => {
         stepButtons.forEach((item, secindex)=>{
             if(index > secindex){
