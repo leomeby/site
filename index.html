@@ -316,6 +316,7 @@
             </div>
         </div>
     </section>
+
     <!-- /End Newsletter Area -->
 
     <footer class="footer">
@@ -457,10 +458,10 @@
 <div class="card" style="border: 0">
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <section class="newsletter-area" style="background-color: transparent">
-           <div class="subscribe-text fadeInLeft" style="border-radius: 2em 2em 2em 2em">
+           <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите адрес электронной почты</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="mail" placeholder="mail@example.com" class="common-input w-100 mail" required="" type="email"><br>
+                            <input name="EMAIL" placeholder="mail@example.com" class="common-input w-100 mail" required="" type="email" id="recipient-name"><br>
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Продолжить!</button>
                             </div>
@@ -472,14 +473,14 @@
 <div class="card" style="border: 0">
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
         <section class="newsletter-area" style="background-color: transparent">
-           <div class="subscribe-text fadeInLeft" style="border-radius: 2em 2em 2em 2em">
+           <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите контактные данные</h6>
-                        <form class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="name" placeholder="Фамилия Имя" class="common-input w-100" required="" type="text" id="nameform"><hr>
-                            <input name="company" placeholder="Компания" class="common-input w-100" required="" type="text" id="companyform"><hr>
-                            <input name="phone" placeholder="Телефон" class="common-input w-100" required="" type="tel" id="phoneform"><hr>
-                            <input name="telegram" placeholder="Telegram" class="common-input w-100" required="" type="text" id="telegramform"><hr>
-                            <input name="sity" placeholder="Город" class="common-input w-100" required="" type="text" id="sityform"><hr>
+                        <form action="" method="" class="newsletter-inner text-right" style="margin-left: -10px">
+                            <input id="name-name" placeholder="Фамилия Имя" class="common-input w-100" required="" type="text"><hr>
+                            <input id="company-name" placeholder="Компания" class="common-input w-100" required="" type="text"><hr>
+                            <input id="phone-name" placeholder="Телефон" class="common-input w-100" required="" type="tel"><hr>
+                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required="" type="text"><hr>
+                            <input id="theme-name" placeholder="Город" class="common-input w-100" required="" type="text"><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Назад</button>
@@ -496,12 +497,12 @@
 <div class="card" style="border: 0">
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"data-bs-parent="#accordionExample">
         <section class="newsletter-area" style="background-color: transparent">
-           <div class="subscribe-text fadeInLeft" style="border-radius: 2em 2em 2em 2em">
+           <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input name="theme" placeholder="Тема вопроса" class="common-input w-100 theme-name" required="" type="text" id="themeform"><hr>
+                            <input id="theme-name" placeholder="Тема вопроса" class="common-input w-100" id="theme-name" required="" type="text"><hr>
                             
-                            <textarea name="message" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" id="messageform"></textarea><hr>
+                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text"></textarea><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Назад</button>
@@ -518,7 +519,7 @@
 <div class="card" style="border: 0">
     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
         <section class="newsletter-area" style="background-color: transparent">
-           <div class="subscribe-text fadeInLeft" style="border-radius: 2em 2em 2em 2em">
+           <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6 class="text-center">Почти все!</h6>
                         <div class="newsletter-inner" style="margin-left: -10px">
                             <div class="text-center">
@@ -534,14 +535,8 @@
                                 <hr>
                             <div class="d-flex justify-content-end">
                              <ul class="table-list">
-                            <li style="margin: 10px;"><span class="nameend"></span></li>
-                            <li style="margin: 10px;"><span class="companyend"></span></li>
-                            <li style="margin: 10px;"><span class="sityend"></span></li>
                             <li style="margin: 10px;"><span class="emailend"></span></li>
-                            <li style="margin: 10px;"><span class="phoneend"></span></li>
-                            <li style="margin: 10px;"><span class="telegramend"></span></li>
                             <li style="margin: 10px;"><span class="themeend"></span></li>
-                            <li style="margin: 10px;"><span class="messageend"></span></li>
                         </ul>                                
                             </div>
                             </div>
@@ -584,18 +579,19 @@ exampleModal.addEventListener('show.bs.modal', event => {
   // Обновляет содержимое модального окна.
   const emailinend = document.querySelector('.emailend')
   const themeinend = document.querySelector('.themeend')
-  const modalBodyInputMail = exampleModal.querySelector('.modal-body input .mail')
-  const modalBodyInputTheme = exampleModal.querySelector('.modal-body input .theme-name')
+  const modalBodyInputMail = exampleModal.querySelector('#recipient-name')
+  const modalBodyInputTheme = exampleModal.querySelector('#theme-name')
 
   emailinend.textContent = `Email: ${recipient}`
   themeinend.textContent = `Тема: ${theme}`
 
   modalBodyInputMail.value = recipient
-  modalBodyInputTheme.value = theme 
+  modalBodyInputTheme.value = theme
 })
     </script>   
    
  
+    
     
     <!-- ========================= JS here ========================= -->
 
