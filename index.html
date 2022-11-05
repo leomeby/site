@@ -294,7 +294,7 @@
                         <p class="">Укажите адрес электронной почты и заполните небольшую форму.</p>
                         <div class="newsletter-inner">
                         <form novalidate>
-                            <input name="email" placeholder="mail@example.com" class="common-input" required minlength="8" type="email" id="value-1" onchange="document.querySelector('.emailend').textContent = `Email: ${this.value}`"><span class="error" aria-live="polite"></span>
+                            <input name="email" placeholder="mail@example.com" class="common-input" required minlength="8" type="email" id="value-1" onchange="document.querySelector('.emailend').textContent = `${this.value}`"><span class="error" aria-live="polite"></span>
                             <input class="common-input d-none" required></form>
                             <div class="button">
                                 <button class="btn disabled" data-bs-toggle="modal" data-bs-target="#exampleModal" id="form0">Продолжить!</button>
@@ -463,7 +463,7 @@
                         <h6>Укажите адрес электронной почты</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <form novalidate>
-                            <input name="email" placeholder="mail@example.com" class="common-input w-100 mail" required minlength="8" type="email" id="recipient-name" onchange="document.querySelector('.emailend').textContent = `Email: ${this.value}`"><span class="error" aria-live="polite"></span>
+                            <input name="email" placeholder="mail@example.com" class="common-input w-100 mail" required minlength="8" type="email" id="recipient-name" onchange="document.querySelector('.emailend').textContent = `${this.value}`"><span class="error" aria-live="polite"></span>
                                 </form>
 <br>
                             <div class="button"><br>
@@ -481,11 +481,11 @@
                         <h6>Укажите контактные данные</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <form novalidate class="forma">
-                            <input id="name-name" placeholder="Фамилия Имя" minlength="5" class="common-input w-100" required type="text" onchange="document.querySelector('.nameend').textContent = `Фамилия Имя: ${this.value}`"><hr>
-                            <input id="company-name" placeholder="Компания" class="common-input w-100" required type="text" onchange="document.querySelector('.companyend').textContent = `Компания: ${this.value}`"><hr>
-                            <input id="phone-name" placeholder="Телефон" class="common-input w-100" required type="tel" onchange="document.querySelector('.phoneend').textContent = `Телефон: ${this.value}`"><hr>
-                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required type="text" onchange="document.querySelector('.telegramend').textContent = `Telegram: @${this.value}`"><hr>
-                                <input id="theme-name" placeholder="Город" class="common-input w-100" required type="text" onchange="document.querySelector('.sityend').textContent = `Город: ${this.value}`"><hr></form>
+                            <input id="name-name" placeholder="Фамилия Имя" minlength="5" class="common-input w-100" required type="text" onchange="document.querySelector('.nameend').textContent = `${this.value}`"><hr>
+                            <input id="company-name" placeholder="Компания" class="common-input w-100" required type="text" onchange="document.querySelector('.companyend').textContent = `${this.value}`"><hr>
+                            <input id="phone-name" placeholder="Телефон" class="common-input w-100" required type="tel" onchange="document.querySelector('.phoneend').textContent = `${this.value}`"><hr>
+                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required type="text" onchange="document.querySelector('.telegramend').textContent = `@${this.value}`"><hr>
+                                <input id="theme-name" placeholder="Город" class="common-input w-100" required type="text" onchange="document.querySelector('.sityend').textContent = `${this.value}`"><hr></form>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Назад</button>
@@ -505,9 +505,9 @@
            <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input  placeholder="Тема вопроса" class="common-input w-100 theme-name" id="theme-name" required="" type="text" onchange="document.querySelector('.themeend').textContent = `Тема: ${this.value}`;document.querySelector('.toast-message').textContent = `${this.value}`"><hr>
+                            <input  placeholder="Тема вопроса" class="common-input w-100 theme-name" id="theme-name" required="" type="text" onchange="document.querySelector('.themeend').textContent = `${this.value}`;document.querySelector('.toast-message').textContent = `${this.value}`"><hr>
                             
-                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `Сообщение: ${this.value}`;"></textarea><hr>
+                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `${this.value}`;"></textarea><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Назад</button>
@@ -538,19 +538,23 @@
                         </div>
                             <div class="d-none" id="collapsedData">
                             <div class=" text-info row">
-                                <div class="col-sm-12 col-md-2 col-lg-4"></div>
-                                <div class="col-sm-12 col-md-10 col-lg-8">
+                                <div class="col-sm-12 col-md-6 col-lg-4"><br>
+                             <ul class="table-list" style="margin-top: 22px">
+                            <li style="margin: 10px;"><b>Фамилия Имя: </b><span class="nameend"></span></li>
+                            <li style="margin: 10px;"><b>Компания: </b><span class="companyend"></span></li>
+                            <li style="margin: 10px;"><b>Город: </b><span class="sityend"></span></li>
+                            <li style="margin: 10px;"><hr></li>
+                            <li style="margin: 10px;"><b>Телефон: </b><span class="phoneend"></span></li>
+                            <li style="margin: 10px;"><b>Telegram: </b><span class="telegramend"></span></li>
+                            <li style="margin: 10px;"><b>Email: </b><span class="emailend"></span></li>
+                        </ul> 
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-8">
                                 <hr>
                             <div class="d-flex justify-content-end">
                              <ul class="table-list">
-                            <li style="margin: 10px;"><span class="nameend"></span></li>
-                            <li style="margin: 10px;"><span class="companyend"></span></li>
-                            <li style="margin: 10px;"><span class="sityend"></span></li>
-                            <li style="margin: 10px;"><span class="phoneend"></span></li>
-                            <li style="margin: 10px;"><span class="telegramend"></span></li>
-                            <li style="margin: 10px;"><span class="emailend"></span></li>
-                            <li style="margin: 10px;"><span class="themeend"></span></li>
-                            <li style="margin: 10px;"><span class="messageend"></span></li>
+                            <li style="margin: 10px;"><b>Тема: </b><span class="themeend"></span></li>
+                            <li style="margin: 10px;"><b>Сообщение:</b><br><span class="messageend"></span></li>
                         </ul>                                
                             </div>
                                 </div>
