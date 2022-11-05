@@ -5678,14 +5678,14 @@ fieldset:disabled .btn {
 }
 
 .toast {
-    max-width: 350px;
-    font-size: .875rem;
+    width: 100%;
+    font-size: 1.075rem;
     background-color: rgba(255, 255, 255, .85);
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .1);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     opacity: 0;
-    border-radius: .25rem
+    border-radius: .45rem
 }
 
 .toast:not(:last-child) {
@@ -5707,18 +5707,18 @@ fieldset:disabled .btn {
 
 .toast-header {
     display: flex;
-    align-items: center;
+    align-items:center;
     padding: .5rem .75rem;
     color: #6c757d;
     background-color: rgba(255, 255, 255, .85);
     background-clip: padding-box;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px)
+    border-top-left-radius: calc(.45rem - 1px);
+    border-top-right-radius: calc(.45rem - 1px)
 }
 
 .toast-header .btn-close {
-    margin-right: -.375rem;
+    margin-top: .375rem;
     margin-left: .75rem
 }
 

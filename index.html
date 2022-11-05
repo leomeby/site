@@ -499,7 +499,7 @@
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <input  placeholder="Тема вопроса" class="common-input w-100 theme-name" id="theme-name" required="" type="text" onchange="document.querySelector('.themeend').textContent = `Тема: ${this.value}`"><hr>
                             
-                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `Сообщение: ${this.value}`"></textarea><hr>
+                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `Сообщение: ${this.value}`; document.querySelector('.toast-message').textContent = `${this.value}`"></textarea><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Назад</button>
@@ -552,7 +552,7 @@
                                 <button class="btn">Назад</button>
                             </div>
                             <div class="button">
-                                <button class="btn lock d-none" id="lock">Отправить!</button>
+                                <button class="btn lock d-none" id="lock" data-bs-dismiss="modal">Отправить!</button>
                             </div>
                             </div>
                         </div>
@@ -567,24 +567,27 @@
   </div>
 </div>
     
-    
-<div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 10000">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-        <i class="rounded me-2"></i>
-      <strong class="me-auto">Ваша сообщение принято!</strong>
-        <small></small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+   <div class="toast-container position-fixed top-0 start-0 p-3" style=" width: 100%;z-index: 100 margin-top: 90px">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="width: 100%">
+    <div class="toast-header d-flex justify-content-between">
+      <div><i class="lni lni-support rounded me-2" style="font-size: 24px;"></i>&nbsp;
+      <strong class="me-auto">Бот Leo</strong></div>
+      <div>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button></div>
     </div>
     <div class="toast-body">
-        <p>Предлагаем скачать и оформить заявку:</p>
-       <div class="mt-2 pt-2 border-top">
-      <a download href="#" type="button" class="btn btn-primary btn-sm">Скачать</a>
-      <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Закрыть</button>
+      Здравстуйте! Я передал Ваше сообщение:<br>
+        <small><i class="text-info toast-message"></i></small>
+        <hr>
+        Предлагаю Вам пока что заполнить заявку или написать в наш бот Telegram:
+        <div class="mt-2 pt-2 border-top d-flex justify-content-end">
+      <button type="button" class="btn btn-primary btn-sm" style="border-radius: 0.5em 0.5em 0.5em 0.5em">Telegram bot</button>&nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-success btn-sm" style="border-radius: 0.5em 0.5em 0.5em 0.5em">Скачать заявку</button>
     </div>
     </div>
   </div>
-</div>
+</div> 
+
     
     
     
