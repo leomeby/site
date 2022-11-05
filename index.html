@@ -427,7 +427,7 @@
     <progress id="progress" value=0 max=100 class="d-none d-sm-block" style="margin-right: 20px; margin-left: 20px; padding-right: -50px"></progress>
     <div class="step-item">
         <div class="step-title">
-            <button class="step-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="step-button text-center" type="button">
           <span class="step-number"><i class="lni lni-envelope"></i></span>
             </button>        <small class="text-dark d-none d-md-block" style="margin-top:5px"> &nbsp;1. E-mail</small>
     
@@ -480,17 +480,18 @@
            <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Укажите контактные данные</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input id="name-name" placeholder="Фамилия Имя" minlength="3" class="common-input w-100" required type="text" onchange="document.querySelector('.nameend').textContent = `Фамилия Имя: ${this.value}`"><hr>
-                            <input id="company-name" placeholder="Компания" class="common-input w-100" type="text" onchange="document.querySelector('.companyend').textContent = `Компания: ${this.value}`"><hr>
-                            <input id="phone-name" placeholder="Телефон (+375..)" disabled minlength="13" class="common-input w-100" required type="tel" onchange="document.querySelector('.phoneend').textContent = `Телефон: ${this.value}`"><hr>
-                            <input id="telegram-name" placeholder="Telegram" disabled minlength="5" class="common-input w-100" required type="text" onchange="document.querySelector('.telegramend').textContent = `Telegram: @${this.value}`"><hr>
-                            <input id="sity-name" placeholder="Город" class="common-input w-100" type="text" onchange="document.querySelector('.sityend').textContent = `Город: ${this.value}`"><hr>
+                            <form novalidate class="forma">
+                            <input id="name-name" placeholder="Фамилия Имя" minlength="5" class="common-input w-100" required type="text" onchange="document.querySelector('.nameend').textContent = `Фамилия Имя: ${this.value}`"><hr>
+                            <input id="company-name" placeholder="Компания" class="common-input w-100" required type="text" onchange="document.querySelector('.companyend').textContent = `Компания: ${this.value}`"><hr>
+                            <input id="phone-name" placeholder="Телефон" class="common-input w-100" required type="tel" onchange="document.querySelector('.phoneend').textContent = `Телефон: ${this.value}`"><hr>
+                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required type="text" onchange="document.querySelector('.telegramend').textContent = `Telegram: @${this.value}`"><hr>
+                                <input id="theme-name" placeholder="Город" class="common-input w-100" required type="text" onchange="document.querySelector('.sityend').textContent = `Город: ${this.value}`"><hr></form>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Назад</button>
                             </div>
                             <div class="button"><br>
-                                <button class="btn step-buttonss disabled" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="form2">Продолжить!</button>
+                                <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="form2" onclick=" document.getElementById('steper-3').classList.remove('disabled');    document.getElementById('steper-3').removeAttribute('disabled');">Продолжить!</button>
                             </div>
                             </div>
                         </div>
@@ -506,7 +507,7 @@
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <input  placeholder="Тема вопроса" class="common-input w-100 theme-name" id="theme-name" required="" type="text" onchange="document.querySelector('.themeend').textContent = `Тема: ${this.value}`;document.querySelector('.toast-message').textContent = `${this.value}`"><hr>
                             
-                            <textarea id="message-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `Сообщение: ${this.value}`;"></textarea><hr>
+                            <textarea id="theme-name" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `Сообщение: ${this.value}`;"></textarea><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Назад</button>
@@ -815,23 +816,14 @@ Array.from(stepButtons).forEach((button,index) => {
         
       // Существуют разные способы получить DOM-узел; здесь мы определяем саму форму и
 // поле ввода email и элемент span, в который поместим сообщение об ошибке
-const form  = document.getElementsByTagName('form')[0];
+const form  = document.getElementsByTagName('form');
 
 const email = document.getElementById('recipient-name');
 const mail = document.getElementById('value-1');
 const name = document.getElementById('name-name');
-const phone = document.getElementById('phone-name');
-const telegram = document.getElementById('telegram-name');
-const theme = document.getElementById('theme-name');
-const message = document.getElementById('message-name');
-        
 const emailError = document.querySelector('#recipient-name + span.error');
 const mailError = document.querySelector('#value-1 + span.error');
 const nameError = document.querySelector('#name-name + span.error');
-const phoneError = document.querySelector('#phone-name + span.error');
-const telegramError = document.querySelector('#telegram-name + span.error');
-const themeError = document.querySelector('#theme-name + span.error');
-const messageError = document.querySelector('#message-name + span.error');
 
 mail.addEventListener('input', function (event) {
   // Каждый раз, когда пользователь что-то вводит,
@@ -847,12 +839,14 @@ mail.addEventListener('input', function (event) {
     document.getElementById('form1').classList.remove("disabled");
     document.getElementById('form0').classList.remove("disabled");
     document.getElementById('steper-2').classList.remove("disabled");
+    document.getElementById('steper-2').removeAttribute("disabled");
   } else {
     // Если поле не валидно, показываем правильную ошибку
     showError();
     document.getElementById('form0').classList.add("disabled");
     document.getElementById('form1').classList.add("disabled");
     document.getElementById('steper-2').classList.add("disabled");
+    document.getElementById('steper-2').setAttribute("disabled", "true");
   }
 });
 
@@ -863,74 +857,23 @@ email.addEventListener('input', function (event) {
   if (email.validity.valid) {
     // Если на момент валидации какое-то сообщение об ошибке уже отображается,
     // если поле валидно, удаляем сообщение
-    mailError.textContent = ''; // Сбросить содержимое сообщения
-    mailError.className = 'error'; // Сбросить визуальное состояние сообщения
     emailError.textContent = ''; // Сбросить содержимое сообщения
     emailError.className = 'error'; // Сбросить визуальное состояние сообщения
     document.getElementById('form1').classList.remove("disabled");
     document.getElementById('steper-2').classList.remove("disabled");
+    document.getElementById('steper-2').removeAttribute("disabled");
+
 
   } else {
     // Если поле не валидно, показываем правильную ошибку
     showError();
     document.getElementById('form1').classList.add("disabled");
     document.getElementById('steper-2').classList.add("disabled");
-
-  }
-});
-name.addEventListener('input', function (event) {
-  // Каждый раз, когда пользователь что-то вводит,
-  // мы проверяем, являются ли поля формы валидными
-
-  if (name.validity.valid) {
-    // Если на момент валидации какое-то сообщение об ошибке уже отображается,
-    // если поле валидно, удаляем сообщение
-    nameError.textContent = ''; // Сбросить содержимое сообщения
-    nameError.className = 'error'; // Сбросить визуальное состояние сообщения
-    document.getElementById('phone-name').removeAttribute("disabled");
-  } else {
-    // Если поле не валидно, показываем правильную ошибку
-    showError();
-    document.getElementById('phone-name').setAttribute("disabled", "true");
-
+    document.getElementById('steper-2').setAttribute("disabled", "true");
   }
 });
         
-phone.addEventListener('input', function (event) {
-  // Каждый раз, когда пользователь что-то вводит,
-  // мы проверяем, являются ли поля формы валидными
 
-  if (phone.validity.valid) {
-    // Если на момент валидации какое-то сообщение об ошибке уже отображается,
-    // если поле валидно, удаляем сообщение
-    phoneError.textContent = ''; // Сбросить содержимое сообщения
-    phoneError.className = 'error'; // Сбросить визуальное состояние сообщения
-    document.getElementById('telegram-name').removeAttribute("disabled");
-  } else {
-    // Если поле не валидно, показываем правильную ошибку
-    showError();
-    document.getElementById('telegram-name').setAttribute("disabled", "true");
-
-  }
-});
-
-telegram.addEventListener('input', function (event) {
-  // Каждый раз, когда пользователь что-то вводит,
-  // мы проверяем, являются ли поля формы валидными
-
-  if (telegram.validity.valid) {
-    // Если на момент валидации какое-то сообщение об ошибке уже отображается,
-    // если поле валидно, удаляем сообщение
-    telegramError.textContent = ''; // Сбросить содержимое сообщения
-    telegramError.className = 'error'; // Сбросить визуальное состояние сообщения
-    document.getElementById('form-2').classList.remove("disabled");
-  } else {
-    // Если поле не валидно, показываем правильную ошибку
-    showError();
-    document.getElementById('form-2').classList.add("disabled");
-
-  }
-});
 function showError() {
   if(email.validity.valueMissing) {
     // Если поле пустое,
@@ -959,13 +902,10 @@ function showError() {
     // отображаем следующее сообщение об ошибке
     mailError.textContent = `Email содержит минимум ${ mail.minLength } символов. Вы ввели ${ mail.value.length }.`;
   }
-
+    
   // Задаём соответствующую стилизацию
   emailError.className = 'error active';
   mailError.className = 'error active';
-  nameError.className = 'error active';
-  phoneError.className = 'error active';
-  telegramError.className = 'error active';
 }  
         
         
