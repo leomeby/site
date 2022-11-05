@@ -5295,3 +5295,31 @@ input[type="range"]::-webkit-slider-thumb {
 	width: 3em;
 
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: rgba(34, 60, 80, 0.01);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: linear-gradient(180deg, #1e2743, #490e9f);
+}
+.modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+  border-radius: 5px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #dbdcdd;
+}

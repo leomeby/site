@@ -194,14 +194,15 @@
                     </div>
                 </div>
             </div>
-            <div class="row wow fadeInUp" data-wow-delay=".5s" style="margin-top: -30px">
+            <div class="wow fadeInUp" data-wow-delay=".5s" style="margin-top: -30px">
+                <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-4 col-md-5 col-12">
                     <!-- Single Table -->
                     <div class="single-table wow fadeInUp" style="border-radius: 3em 0.3em 3em 0.3em; opacity: 0.95" data-wow-delay=".6s">
                         <!-- Table Head -->
                         <div class="table-head">
-                            <h4 class="title text-primary">Офисный персонал</h4>
+                            <h4 class="title text-primary">Офисный персонал<sup>*</sup></h4>
                             <div class="price">
                                 <p class="amount">от $350<span class="duration">за кандидата</span></p>
                             </div>
@@ -216,7 +217,7 @@
                         <!-- End Table List -->
                         <!-- Table Bottom -->
                         <div class="button" style="margin-top: 20px">
-                            <a class="btn" href="#">Цены</a>
+                            <a class="btn"  data-bs-toggle="modal" data-bs-target="#priceOfficeModal">Цены</a>
                         </div>
                         <div class="button" style="margin-top: 10px">
                             <a class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Офисный персонал">Связаться</a>
@@ -231,7 +232,7 @@
                     <div class="single-table wow fadeInUp" style="border-radius: 3em 0.3em 3em 0.3em; opacity: 0.95" data-wow-delay=".6s">
                         <!-- Table Head -->
                         <div class="table-head">
-                            <h4 class="title text-primary">Домашний персонал</h4>
+                            <h4 class="title text-primary">Домашний персонал<sup>*</sup></h4>
                             <div class="price">
                                 <p class="amount">от $350<span class="duration">за кандидата</span></p>
                             </div>
@@ -246,7 +247,7 @@
                         <!-- End Table List -->
                         <!-- Table Bottom -->
                         <div class="button" style="margin-top: 20px">
-                            <a class="btn" href="#">Цены</a>
+                            <a class="btn"  data-bs-toggle="modal" data-bs-target="#priceHomeModal">Цены</a>
                         </div>
                         <div class="button" style="margin-top: 10px">
                             <a class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="Домашний персонал">Связаться</a>
@@ -256,9 +257,13 @@
                     <!-- End Single Table-->
                 </div>
                 <div class="col-lg-1"></div>
+                    </div>
+<br>            <p class="text-white"><sup>*</sup> по курсу НБРБ на день оплаты в белорусских рублях</p>
 
             </div>
+
         </div>
+
     </section>
     <!--/ End Pricing Table Area -->
 
@@ -476,7 +481,7 @@
                             <input id="name-name" placeholder="Фамилия Имя" class="common-input w-100" required="" type="text" onchange="document.querySelector('.nameend').textContent = `Фамилия Имя: ${this.value}`"><hr>
                             <input id="company-name" placeholder="Компания" class="common-input w-100" required="" type="text" onchange="document.querySelector('.companyend').textContent = `Компания: ${this.value}`"><hr>
                             <input id="phone-name" placeholder="Телефон" class="common-input w-100" required="" type="tel" onchange="document.querySelector('.phoneend').textContent = `Телефон: ${this.value}`"><hr>
-                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required="" type="text" onchange="document.querySelector('.telegramend').textContent = `Telegram: ${this.value}`"><hr>
+                            <input id="theme-name" placeholder="Telegram" class="common-input w-100" required="" type="text" onchange="document.querySelector('.telegramend').textContent = `Telegram: @${this.value}`"><hr>
                             <input id="theme-name" placeholder="Город" class="common-input w-100" required="" type="text" onchange="document.querySelector('.sityend').textContent = `Город: ${this.value}`"><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
@@ -567,8 +572,8 @@
   </div>
 </div>
     
-   <div class="toast-container position-fixed top-0 start-0 p-3" style=" width: 100%;z-index: 100 margin-top: 90px">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="width: 100%">
+   <div class="toast-container position-fixed top-0 start-0 p-3 d-none" id="shower" style=" width: 100%; z-index: 100">
+  <div id="liveToast" class="toast" role="alert" aria-live="polite" aria-atomic="true" style="width: 100%; z-index: 100">
     <div class="toast-header d-flex justify-content-between">
       <div><i class="lni lni-support rounded me-2" style="font-size: 24px;"></i>&nbsp;
       <strong class="me-auto">Бот Leo</strong></div>
@@ -589,10 +594,97 @@
 </div> 
 
     
-    
+ <div class="modal fade" id="priceOfficeModal" tabindex="-1" aria-labelledby="priceOfficeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="priceOfficeModalLabel">Цены <small><small class="text-secondary">Офисный персонал</small></small></h5>
+        <div class="button">
+            <a class="btn" data-bs-dismiss="modal" aria-label="Закрыть">Закрыть</a>
+        </div>
+      </div>
+      <div class="modal-body">
+          <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Фамилия</th>
+      <th scope="col">Обращение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+  </div>
+</div>
+       
+ <div class="modal fade" id="priceHomeModal" tabindex="-1" aria-labelledby="priceHomeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="priceHomeModalLabel">Цены <small><small class="text-secondary">Домашний персонал</small></small></h5>
+        <div class="button">
+            <a class="btn" data-bs-dismiss="modal" aria-label="Закрыть">Закрыть</a>
+        </div>
+      </div>
+      <div class="modal-body">
+          <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Фамилия</th>
+      <th scope="col">Обращение</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+  </div>
+</div>
+   
     
    <script type="text/javascript" src="assets/js/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 
     <script>
 const exampleModal = document.getElementById('exampleModal')
@@ -631,10 +723,12 @@ exampleModal.addEventListener('show.bs.modal', event => {
         if (result == 100){
             document.getElementById('lock').classList.remove("d-none");
             document.getElementById('lock-icon').classList.remove("d-none");
+            document.getElementById('shower').classList.remove("d-none");
             document.getElementById('lock-ico').classList.add("d-none");
         } else {
             document.getElementById('lock').classList.add("d-none");
             document.getElementById('lock-icon').classList.add("d-none");
+            document.getElementById('shower').classList.add("d-none");
             document.getElementById('lock-ico').classList.remove("d-none");
 
         }
