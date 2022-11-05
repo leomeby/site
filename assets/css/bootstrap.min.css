@@ -5680,11 +5680,12 @@ fieldset:disabled .btn {
 .toast {
     width: 100%;
     font-size: 1.075rem;
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, 1);
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .1);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     opacity: 0;
+    margin-top: 76px;
     border-radius: .45rem
 }
 
@@ -5710,7 +5711,7 @@ fieldset:disabled .btn {
     align-items:center;
     padding: .5rem .75rem;
     color: #6c757d;
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, .99);
     background-clip: padding-box;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
     border-top-left-radius: calc(.45rem - 1px);
