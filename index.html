@@ -203,9 +203,9 @@
                     <div class="single-table wow fadeInUp" style="border-radius: 3em 0.3em 3em 0.3em; opacity: 0.95" data-wow-delay=".6s">
                         <!-- Table Head -->
                         <div class="table-head">
-                            <h4 class="title text-primary">Офисный персонал<sup>*</sup></h4>
+                            <h4 class="title text-primary">Офисный персонал</h4>
                             <div class="price">
-                                <p class="amount">от $350<span class="duration">за кандидата</span></p>
+                                <p class="amount">от $350<sup  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="На день оплаты по курсу НБРБ в белорусских рублях" ><i class="lni lni-question-circle text-secondary" style="padding:8px;"></i></sup><span class="duration">за кандидата</span></p>
                             </div>
                         </div>
                         <!-- End Table Head -->
@@ -233,9 +233,9 @@
                     <div class="single-table wow fadeInUp" style="border-radius: 3em 0.3em 3em 0.3em; opacity: 0.95" data-wow-delay=".6s">
                         <!-- Table Head -->
                         <div class="table-head">
-                            <h4 class="title text-primary">Домашний персонал<sup>*</sup></h4>
+                            <h4 class="title text-primary">Домашний персонал</h4>
                             <div class="price">
-                                <p class="amount">от $350<span class="duration">за кандидата</span></p>
+                                <p class="amount">от $350<sup  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="На день оплаты по курсу НБРБ в белорусских рублях" ><i class="lni lni-question-circle text-secondary" style="padding:8px;"></i></sup><span class="duration">за кандидата</span></p>
                             </div>
                         </div>
                         <!-- End Table Head -->
@@ -333,7 +333,7 @@
                         <div class="f-about single-footer">
                             <div class="logo">
                             <a class="logo" href="index.html" style="font-size: 23px; color: #6610f2; margin-top: -20px">
-                                <img src="assets/images/logo/logo-inverse.jpg" style="height:auto; width:52px;"> <i><b>LeoMi</b>.by</i>
+                                <img src="assets/images/logo/logo-inverse.jpg" style="height:auto; width:52px; margin-right: -5px;"> <i><b>LeoMi</b>.by</i>
                             </a>                            </div>
                             <p style="margin-top: -20px">Ваша команда - залог успеха для Вашей идеи! Мы поможем реализовать Ваши мечты!</p>
                             <div class="footer-social">
@@ -574,21 +574,21 @@
 </div>
     
    <div class="toast-container position-fixed top-0 start-0 p-3 d-none" id="shower" style=" width: 100%; z-index: 100">
-  <div id="liveToast" class="toast" role="alert" aria-live="polite" aria-atomic="true" style="width: 100%; z-index: 100">
+  <div id="liveToast" class="toast" role="alert" aria-live="polite" aria-atomic="true" style="width: 100%; z-index: 100; background-color: #301c69; border: solid 2px #0d6efd">
     <div class="toast-header d-flex justify-content-between">
       <div><i class="lni lni-support rounded me-2" style="font-size: 24px;"></i>&nbsp;
       <strong class="me-auto">Бот Leo</strong></div>
       <div>
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button></div>
     </div>
-    <div class="toast-body">
+    <div class="toast-body text-white">
       Здравстуйте! Я передал Ваше сообщение:<br>
-        <small><i class="text-info toast-message"></i></small>
+        <small class="overflow-auto" style="height: 182px"><i class="text-info toast-message"></i></small>
         <hr>
         Предлагаю Вам пока что заполнить заявку или написать в наш бот Telegram:
         <div class="mt-2 pt-2 border-top d-flex justify-content-end">
       <button type="button" class="btn btn-primary btn-sm" style="border-radius: 0.5em 0.5em 0.5em 0.5em">Telegram bot</button>&nbsp;&nbsp;&nbsp;
-      <button type="button" class="btn btn-success btn-sm" style="border-radius: 0.5em 0.5em 0.5em 0.5em">Скачать заявку</button>
+      <button type="button" class="btn btn-sm text-white" style="border-radius: 0.5em 0.5em 0.5em 0.5em; background-color: #20c997">Скачать заявку</button>
     </div>
     </div>
   </div>
@@ -749,6 +749,8 @@ if (toastTrigger) {
     </script>
     
 <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 const stepButton = document.querySelectorAll('.step-button');
 const stepButtons = document.querySelectorAll('.step-buttonss');
 const progress = document.querySelector('#progress');
