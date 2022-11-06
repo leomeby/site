@@ -5413,17 +5413,20 @@ input:focus:invalid {
 
 /* Это стили для кастомных сообщений об ошибке */
 .error {
-  width  : 100%;
+  max-width: 160px;
   padding: 0;
+  margin-left: 20px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 
   font-size: 80%;
   color: white;
-  background-color: #900;
-  border-radius: 0 0 5px 5px;
+  background-color: #ff2175;
+  border-radius: 8px 8px 8px 8px;
 
   box-sizing: border-box;
 }
 
 .error.active {
-  padding: 0.3em;
+  padding: 0.45em;
 }
