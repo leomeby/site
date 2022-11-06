@@ -296,7 +296,7 @@
                         <div class="newsletter-inner">
                         <form novalidate>                            <input class="common-input d-none" required></form>
 
-                            <input name="email" placeholder="mail@example.com" class="common-input" required minlength="8" type="email" id="value-1" onchange="document.querySelector('.emailend').textContent = `${this.value}`; document.querySelector('.toast-mail').textContent = `${this.value}`"><span class="error" aria-live="polite"></span>
+                            <input name="email" placeholder="mail@example.com" class="common-input" required minlength="8" type="email" id="value-1" onchange="document.querySelector('.emailend').textContent = `${this.value}`; document.querySelector('.toast-mail').textContent = `${this.value}`; document.querySelector('#finish_mail').value = `${this.value}`"><span class="error" aria-live="polite"></span>
                             <div class="button">
                                 <button class="btn disabled" data-bs-toggle="modal" data-bs-target="#exampleModal" id="form0">Продолжить!</button>
                             </div>
@@ -336,8 +336,8 @@
                             <a class="logo" href="index.html" style="font-size: 23px; color: #6610f2; margin-top: -20px">
                                 <img src="assets/images/logo/logo-inverse.jpg" style="height:auto; width:52px; margin-right: -5px;"> <i><b>LeoMi</b>.by</i>
                             </a>                            </div>
-                            <p style="margin-top: -20px">Ваша команда - залог успеха для Вашей идеи! Мы поможем реализовать Ваши мечты!</p>
-                            <div class="footer-social">
+                            <p style="margin-top: -45px">Ваша команда - залог успеха для Вашей идеи! Мы поможем реализовать Ваши мечты!</p>
+                            <div class="footer-social" style="margin-top: 5px">
                                 <ul>
                                     <li><a href="#"><i class="lni lni-instagram"></i></a></li>
                                     <li><a href="#"><i class="lni lni-facebook"></i></a></li>
@@ -464,7 +464,7 @@
                         <h6>Укажите адрес электронной почты</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <form novalidate>
-                            <input name="email" placeholder="mail@example.com" class="common-input w-100 mail" required minlength="8" type="email" id="recipient-name" onchange="document.querySelector('.emailend').textContent = `${this.value}`; document.querySelector('.toast-mail').textContent = `${this.value}`;"><span class="error" aria-live="polite"></span>
+                            <input name="email" placeholder="mail@example.com" class="common-input w-100 mail" required minlength="8" type="email" id="recipient-name" onchange="document.querySelector('.emailend').textContent = `${this.value}`; document.querySelector('.toast-mail').textContent = `${this.value}`;; document.querySelector('#finish_mail').value = `${this.value}`"><span class="error" aria-live="polite"></span>
                                 </form>
 <br>
                             <div class="button"><br>
@@ -482,11 +482,11 @@
                         <h6>Укажите контактные данные</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
                             <form novalidate class="forma">
-                            <input id="namef" placeholder="Фамилия Имя" minlength="5" class="common-input w-100" required type="text" onchange="document.querySelector('.nameend').textContent = `${this.value}`"><hr>
-                            <input id="companyf" placeholder="Компания" class="common-input w-100" required type="text" onchange="document.querySelector('.companyend').textContent = `${this.value}`"><hr>
-                            <input id="phonef" placeholder="Телефон" class="common-input w-100" required type="tel" onchange="document.querySelector('.phoneend').textContent = `${this.value}`"><hr>
-                            <input id="telegramf" placeholder="Telegram" class="common-input w-100" required type="text" onchange="document.querySelector('.telegramend').textContent = `@${this.value}`"><hr>
-                                <input id="sityf" placeholder="Город" class="common-input w-100" required type="text" onchange="document.querySelector('.sityend').textContent = `${this.value}`"><hr></form>
+                            <input id="namef" placeholder="Фамилия Имя" minlength="5" class="common-input w-100" required type="text" onchange="document.querySelector('.nameend').textContent = `${this.value}`; document.querySelector('#finish_name').value = `${this.value}`"><hr>
+                            <input id="companyf" placeholder="Компания" class="common-input w-100" required type="text" onchange="document.querySelector('.companyend').textContent = `${this.value}`; document.querySelector('#finish_com').value = `${this.value}`"><hr>
+                            <input id="phonef" placeholder="Телефон" class="common-input w-100" required type="tel" onchange="document.querySelector('.phoneend').textContent = `${this.value}`; document.querySelector('#finish_phone').value = `${this.value}`"><hr>
+                            <input id="telegramf" placeholder="Telegram" class="common-input w-100" required type="text" onchange="document.querySelector('.telegramend').textContent = `@${this.value}`; document.querySelector('#finish_tg').value = `${this.value}`"><hr>
+                                <input id="sityf" placeholder="Город" class="common-input w-100" required type="text" onchange="document.querySelector('.sityend').textContent = `${this.value}`; document.querySelector('#finish_sity').value = `${this.value}`"><hr></form>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Назад</button>
@@ -506,14 +506,14 @@
            <div class="subscribe-text FadeInLeft" style="border-radius: 2em 2em 2em 2em">
                         <h6>Ваш вопрос</h6>
                         <div class="newsletter-inner text-right" style="margin-left: -10px">
-                            <input  placeholder="Тема вопроса" class="common-input w-100 theme-name" id="themef" required="" type="text" onchange="document.querySelector('.themeend').textContent = `${this.value}`;document.querySelector('.toast-message').textContent = `${this.value}`"><hr>
+                            <input  placeholder="Тема вопроса" class="common-input w-100 theme-name" id="themef" required="" type="text" onchange="document.querySelector('.themeend').textContent = `${this.value}`;document.querySelector('.toast-message').textContent = `${this.value}`; document.querySelector('#finish_theme').value = `${this.value}`"><hr>
                             
-                            <textarea id="messagef" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `${this.value}`;"></textarea><hr>
+                            <textarea id="messagef" placeholder="Опишите Ваш вопрос:" class="common-input w-100 form-control" style="border-radius: 1.5em 1.5em 1.5em 1.5em" rows="7" required="" type="text" onchange="document.querySelector('.messageend').textContent = `${this.value}`; document.querySelector('#finish_message').value = `${this.value}`"></textarea><hr>
                             <div class="d-flex justify-content-between">
                             <div class="button"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Назад</button>
                             </div>
-                            <div class="button"><br>
+                            <div class="button submitbtn"><br>
                                 <button class="btn step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Продолжить!</button>
                             </div>
                             </div>
@@ -567,7 +567,7 @@
                             <div class="button step-buttonss" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <button class="btn">Назад</button>
                             </div>
-                            <form>
+                            <form id="result_form">
                             <input type="hidden" type="text" name="finish_name" id="finish_name">
                             <input type="hidden" type="text" name="finish_mail" id="finish_mail">
                             <input type="hidden" type="text" name="finish_phone" id="finish_phone">
@@ -926,20 +926,7 @@ function showError() {
         
     </script>
     
-    <script type="text/javascript">
-$(".submitbtn").click(() => {
-    $("#namef").val($("#finish_name").val());
-    $("#recipient-name").val($("#finish_mail").val());
-    $("#companyf").val($("#finish_com").val());
-    $("#telegramf").val($("#finish_tg").val());
-    $("#sityf").val($("#finish_sity").val());
-    $("#phonef").val($("#finish_phone").val());
-    $("#themef").val($("#finish_theme").val());
-    $("#messagef").val($("#finish_message").val());
-});
-    
-    </script>
-    
+
     <script type="text/javascript">
         //========= glightbox
         GLightbox({
@@ -1307,6 +1294,21 @@ window.addEventListener( 'click', init );
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
 <script  src="script.js"></script>
+        <script type="text/javascript">
+$("#result_form").submit(function (e) { // Устанавливаем событие отправки для формы с id=form
+           e.preventDefault();
+            var form_data = $(this).serialize(); // Собираем все данные из формы
+            $.ajax({
+                type: "POST", // Метод отправки
+                url: "public/script/send.php", // Путь до php файла отправителя
+                data: form_data,
+                success: function () {
+                    // Код в этом блоке выполняется при успешной отправке сообщения
+                    alert("Ваше сообщение отправлено!");
+                }
+            });
+        })
+    </script>
     
   
 </body>
